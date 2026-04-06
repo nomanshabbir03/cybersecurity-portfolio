@@ -9,8 +9,8 @@ Actively building hands-on cybersecurity skills toward an internship-ready profi
 
 - 🎓 7th Semester — BS Computer Science, COMSATS Lahore
 - 📜 CEH (Certified Ethical Hacker) — In Progress
-- 🐱 TryHackMe Profile: [Add your link here]
-- 💼 LinkedIn: [Add your link here]
+- 🐱 TryHackMe Profile: https://tryhackme.com/p/nomanshabbir03
+- 💼 LinkedIn: https://www.linkedin.com/in/muhammad-noman00/
 
 ---
 
