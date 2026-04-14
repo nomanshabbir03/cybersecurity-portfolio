@@ -67,7 +67,40 @@
 ---
 
 ## Day 4 — Monday, 23 March 2026
-*(Notes to be added after class)*
+## Day 4 — Monday 23 March 2026
+### Topic: Google Dorking + WHOIS + DNS Enumeration
+
+**Google Dorking**
+- Google Dorking is a searching method which use multiple filter to give you those answer which we usually not get with simple query - In simple words results were always there, we just change the method to search them. Here are few filters that we normally use: 
+site: .edu.pk -- intitle:"admin password" -- inurl:admin
+- Here are few examples:
+    1. site: gov.pk
+    2. filetype: pdf cyber security
+    3. "index of"/backup
+
+- by applying different filter, different results I found but the most interesting and shocking thing was that when I search for "index of"/backup and it actually provide me backup files of few websites which were not supposed to expose but they were and there were some resources also available like images that they may use on website
+
+**WHOIS**
+- WHOIS is a linux command which tell everything about domain, few things might not be shown due to privacy concers but registration date, expiry date, registrar mail or address all these are available easily
+- Usually it reveals all these five fields:
+    1. Registrar Name: Who manage the domain
+    2. Registration Date: when this domain was ceated
+    3. Expiration Date: when this will be expired
+    4. DNS Server: which DNS Server handles it
+    5. Registrant Country: Owner's country, he belongs to
+- Before attacking or defending anything, you need to know who owns it, where it is hosted, and who manages it. WHOIS gives you that in seconds. It is always the first step in any OSINT or footprinting exercise — you are building a profile of the target before doing anything else.
+
+**DNS Enumeration**
+- dig provide us the ip address of any domain
+-   dig google.com A        # IP address of the domain
+    dig google.com MX       # mail servers (who handles their email)
+    dig google.com NS       # nameservers (who manages their DNS)
+    dig google.com TXT      # text records (SPF, verification keys)
+    dig google.com ANY      # everything at once
+- DNS Enumeration is a specific recon technique where you extract as much DNS information from a target as possible — all their subdomains, mail servers, nameservers, IP addresses — by querying their DNS records aggressively.
+
+**Key takeaway today:**
+- Today's i have learned a lot of things, Google Dorking, WhOIS and dig, all of them are important especially dig because it helps a lot to collect as much possible information from DNS as you can and that's the very basic step recon
 
 ---
 
