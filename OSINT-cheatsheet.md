@@ -1,18 +1,84 @@
-# OSINT & Google Dorking Cheatsheet
+# Google Dorking Reference | COMSATS Lahore | Cybersecurity Portfolio
 
-## Google Dork Operators
+## Section 1 — Core Operators
 
-| Operator | Example | What it finds |
-|----------|---------|---------------|
-| site: | site:gov.pk |I found all the website related to Government of Pakistan -- all their departments |
-| filetype: | filetype:pdf cybersecurity |Notes for cyber security but in pdf format |
-| intitle: | intitle:"login page" |log in pages of different websites which normally wasn't showing |
-| inurl: | inurl:admin |url with admin text in them -- mostly admin auth |
-| cache: | cache:bbc.com |i found nothing which means that possibly there'll be no cache |
-| intext: | intext:"confidential" |different results with confidential word in them, mostly the results from dictionary |
-| "index of" | "index of" /backup |different backfile files of website with some resources also which weren;t supposed to available |
-| combined | filetype:xls site:gov.pk |xls files from different departmental websies of government |
+### 1. site:
+Restricts results to a specific domain or website only.  
+Example: `site:facebook.com`
 
-## Notes
-- All dorking is passive recon — no direct target interaction
-- Read and observe only — never access exposed systems
+### 2. filetype:
+Filters results by a specific file extension.  
+Example: `filetype:sql`
+
+### 3. intitle:
+Returns pages where the term appears in the title.  
+Example: `intitle:login`
+
+### 4. inurl:
+Returns pages where the term appears in the URL.  
+Example: `inurl:admin`
+
+### 5. intext:
+Returns pages where the term appears in the content.  
+Example: `intext:password`
+
+### 6. cache:
+Shows Google’s cached version.  
+Example: `cache:example.com`
+
+### 7. link:
+Finds pages linking to a URL.  
+Example: `link:example.com`
+
+### 8. related:
+Finds similar websites.  
+Example: `related:nytimes.com`
+
+### 9. info:
+Shows info about a URL.  
+Example: `info:example.com`
+
+### 10. allintext / allintitle / allinurl:
+Require all words to appear.  
+Example: `allintitle:admin login`
+
+---
+
+## Section 2 — Combination Dorks
+
+- `site:gov.pk filetype:pdf`
+- `intitle:index.of passwords`
+- `filetype:xls intext:username intext:password`
+- `site:pk inurl:admin intitle:login`
+- `filetype:sql intext:INSERT INTO`
+- `inurl:wp-config.php filetype:php`
+- `intext:"Warning: mysql_fetch" OR intext:"Warning: mysqli_fetch"`
+- `site:edu.pk filetype:xls intext:email`
+- `intitle:"Elasticsearch" inurl:9200`
+- `site:targetcompany.com -www filetype:log`
+
+---
+
+## Section 3 — OSINT Workflow (6 Stages)
+
+1. `site:targetcompany.com`
+2. `site:targetcompany.com -www`
+3. `site:targetcompany.com filetype:pdf OR filetype:doc OR filetype:xls`
+4. `site:targetcompany.com inurl:login OR inurl:admin`
+5. `site:targetcompany.com inurl:wp-admin`
+6. `site:targetcompany.com filetype:log OR filetype:bak OR filetype:sql`
+
+---
+
+## Section 4 — GHDB
+
+Google Hacking Database:  
+https://www.exploit-db.com/google-hacking-database
+
+---
+
+## Section 5 — Legal Boundaries
+
+- Recon = legal  
+- Access without permission = illegal  
+- Follow PECA 2016 in Pakistan
